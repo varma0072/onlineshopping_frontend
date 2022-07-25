@@ -1,0 +1,43 @@
+<div class="container bootdey">
+    <div class="col-md-12">
+    <section class="panel">
+          <div class="panel-body" *ngIf="product">
+              <div class="col-md-6">
+                  <div class="pro-img-details">
+                      <img [src]="product.imgpath">
+                  </div>
+                  
+              </div>
+              <div class="col-md-6">
+                  <h4 class="pro-d-title">
+                    
+                       {{product.name}}
+
+                     
+                  </h4>
+                  <p style="margin-top: 1rem;">
+                   ProductID:   {{product.id}}
+                  </p>
+                  <div class="product_meta">
+                      <span class="posted_in"> <strong>Categorie:</strong>  {{product.category}}</span>
+                      <span class="posted_in"> <strong>MadeIn:</strong>  {{product.madein}}</span>
+                      <span class="posted_in"> <strong>brand:</strong>  {{product.brand}}</span>
+                  </div>
+                  <div class="m-bot15"> <strong>Price : </strong> <span class="amount">{{product.price}} ₹</span> </div>
+                  <!-- <div class="form-group">
+                      <label>Quantity</label>
+                      <input type="quantiy" placeholder="1" class="form-control quantity">
+                  </div> -->
+                 
+              </div><br>
+              <br>
+              <p>
+                <button class="btn btn-round btn-primary " style="margin-top: 20px; margin-left: 10px;" (click)="list()" type="button">Back</button>
+            </p>
+          </div>
+        
+      </section>
+  
+      </div>
+  
+      </div>

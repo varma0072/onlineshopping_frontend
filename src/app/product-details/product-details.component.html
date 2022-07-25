@@ -1,0 +1,31 @@
+<h2 style="color: #0fb9b4; text-align: center;">Product Details</h2>
+<div class="d-flex p-5 m-4 justify-content-center">
+
+    <hr />
+    <div *ngIf="product">
+        <div>
+            <img [src]="product.imgpath">
+        </div>
+        <br>
+        <div>
+            <label><b>Product Id: </b></label> {{product.id}}
+        </div>
+        <div>
+            <label><b>Product Name: </b></label> {{product.name}}
+        </div>
+        <div>
+            <label><b>Brand: </b></label> {{product.brand}}
+        </div>
+        <div>
+            <label><b>Category: </b></label> {{product.category}}
+        </div>
+        <div>
+            <label><b>Made In: </b></label> {{product.madein}}
+        </div>
+        <div>
+            <label><b>Price </b></label> {{product.price}}
+        </div>
+        <br>
+        <button (click)="list()" class="btn btn-primary">Back to Product List</button><br>
+    </div>
+</div>

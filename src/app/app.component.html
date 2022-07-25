@@ -1,0 +1,187 @@
+
+  <section class="header-main border-bottom bg-white">
+    <div class="container-fluid" >
+         <div class="row p-2 pt-3 pb-3 d-flex align-items-center">
+             <div class="col-md-2">
+                 <img  class="d-none d-md-flex" routerLink="home"  src="assets/images/lat.png" width="100">
+             </div>
+         
+             
+             <div class="col-md-2">
+                           
+             </div>
+         </div> 
+    </div> 
+  </section>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse"  aria-controls="navbarSupportedContent" aria-expanded="false" >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item active">
+        <a  *ngIf="!userloginService.isUserLoggedIn()" class="nav-link" href="#" style="font-weight:bold;color: rgb(1, 1, 1);"routerLink="home" class="clickme info" routerLinkActive="active">Home</a>
+      </li>
+ 
+
+      <li class="nav-item">
+        <a *ngIf="userloginService.isUserLoggedIn()" (click)="check()"  style="margin-left: 1px;" class="clickme  bg-primary" routerLinkActive="active">My Profile</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="retailerloginservice.isRetailerLoggedIn()" routerLink="addproducts" class="clickme bg-primary" routerLinkActive="active" style="margin-left: 15px;">Add Product</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="retailerloginservice.isRetailerLoggedIn()" routerLink="productlist" class="clickme  bg-primary" routerLinkActive="active" style="margin-left: 15px;">Product List</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="adminloginservice.isAdminLoggedIn()" routerLink="retailerslist" class="clickme  bg-primary" routerLinkActive="active" style="margin-left: 15px;">Retailers List</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="userloginService.isUserLoggedIn()" routerLink="compare" style="margin-left:14px ;"    class="clickme  bg-primary" routerLinkActive="active">Wishlist</a>
+      </li>
+
+      <li class="nav-item dropdown">
+        <div class="dropdown">
+        <button type="button" class="btn info dropdown-toggle" data-bs-toggle="dropdown" style="font-weight:bold;color: black;margin-left:29px"
+          *ngIf="userloginService.isUserLoggedIn()" >Category
+          </button>
+          <ul class="dropdown-menu" style="margin-left: 18px;">
+           <a class="dropdown-item" href="#" routerLink="sports">Sports</a>
+          <a class="dropdown-item" href="#" routerLink="homeappliances">Home Appliances</a>
+          <a class="dropdown-item" href="#" routerLink="gadgets">Gadgets</a>
+          <a class="dropdown-item" href="#" routerLink="Mobiles">Mobiles</a>
+          <a class="dropdown-item" href="#" routerLink="Electronics">Electronics</a>
+          <a class="dropdown-item" href="#" routerLink="clothes">Clothes</a>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="userloginService.isUserLoggedIn()" routerLink="listproducts" style="margin-left:15px ;"    class="clickme  bg-primary" routerLinkActive="active">All Products</a>
+      </li>
+     
+        <a *ngIf="userloginService.isUserLoggedIn()" routerLink="cart" class="fa fa-shopping-cart" style="font-size:24px; margin-left:570px" routerLinkActive="active"></a>
+   
+
+      <li class="nav-item">
+        <a *ngIf="userloginService.isUserLoggedIn()"  style="margin-left:41px ;"  routerLink="userLogout" class="clickme info bg-danger" routerLinkActive="active">LogOut</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="retailerloginservice.isRetailerLoggedIn()"  style="margin-left:553px ;"  routerLink="retailerlogout" class="clickme info bg-danger" routerLinkActive="active">LogOut</a>
+      </li>
+
+      <li class="nav-item">
+        <a *ngIf="adminloginservice.isAdminLoggedIn()"  style="margin-left:553px ;" routerLink="adminlogout" class="clickme info bg-danger" routerLinkActive="active">LogOut</a>
+      </li>
+
+      
+      <li class="nav-item dropdown">
+        <div class="dropdown">
+          <button type="button" class="btn info dropdown-toggle" data-bs-toggle="dropdown" style="font-weight:bold;color: black;margin-left: 686px;"
+          *ngIf="!userloginService.isUserLoggedIn() && !retailerloginservice.isRetailerLoggedIn() && !adminloginservice.isAdminLoggedIn()" >Login
+          </button>
+          <ul class="dropdown-menu" style="margin-left: 686px;">
+            <a class="dropdown-item" routerLink="userLogin">User Login</a>
+ 
+            <a class="dropdown-item" routerLink="retailerLogin">Retailer Login</a>
+
+          </ul>
+        </div>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+<div class="container">
+  <br>
+
+  <div class="card">
+
+    <div class="card-body">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<div class="container" style="height: 100px;">
+  
+</div>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+<footer class="footer_area section_padding_130_0">
+      <div class="container">
+        <div class="row">
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg-4">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Footer Logo-->
+              <div class="footer-logo mb-3"></div>
+              <p>this website is under Estore license.</p>
+              <!-- Copywrite Text-->
+              <div class="copywrite-text mb-5">
+                <p class="mb-0">all copy rights are reserved </p>
+              </div>
+              <!-- Footer Social Area-->
+              <div class="footer_social_area"><a  data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook"><i class="fa fa-facebook"></i></a><a  data-toggle="tooltip" data-placement="top" title="" data-original-title="Pinterest"><i class="fa fa-pinterest"></i></a><a  data-toggle="tooltip" data-placement="top" title="" data-original-title="Skype"><i class="fa fa-skype"></i></a><a  data-toggle="tooltip" data-placement="top" title="" data-original-title="Twitter"><i class="fa fa-twitter"></i></a></div>
+            </div>
+          </div>
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Widget Title-->
+              <h5 class="widget-title">About</h5>
+              <!-- Footer Menu-->
+              <div class="footer_menu">
+                <ul>
+                  <li><a routerLink="Aboutus">About Us</a></li>
+                  <li><a >Corporate Sale</a></li>
+                  <li><a >Terms &amp; Policy</a></li>
+                  <li><a >Community</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Widget Title-->
+              <h5 class="widget-title">Support</h5>
+              <!-- Footer Menu-->
+              <div class="footer_menu">
+                <ul>
+                  <li><a >Help</a></li>
+                  <li><a >Support</a></li>
+                  <li><a >Privacy Policy</a></li>
+                  <li><a >Term &amp; Conditions</a></li>
+                  <li><a >Help &amp; Support</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Single Widget-->
+          <div class="col-12 col-sm-6 col-lg">
+            <div class="single-footer-widget section_padding_0_130">
+              <!-- Widget Title-->
+              <h5 class="widget-title">Contact</h5>
+              <!-- Footer Menu-->
+              <div class="footer_menu">
+                <ul>
+                  <li><a routerLink="contactus">Contact Us</a></li>
+                  <li><a routerLink="contactus">Email Us</a></li>
+                  <li><a routerLink="contactus">Term &amp; Conditions</a></li>
+                  <li><a routerLink="contactus">Help Center</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>

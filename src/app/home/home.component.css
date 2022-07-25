@@ -1,0 +1,29 @@
+
+.back{
+    height:42em; background-size:cover; width:auto;
+    /*background-image:url('/assets/images/home2.webp');*/
+    background-position:50% 50%;
+  }
+  .card-body{
+    background-color:ghostwhite;
+    border-color: red;
+    color: black;
+    text-align: center;
+  }
+  .card{
+    border: 2px red;
+  }
+
+  #productimage{
+    width: 50%;
+    height: 150px;
+  }
+
+  .bloc_left_price {
+    color: #c01508;
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
+}
+  /* app */
+  

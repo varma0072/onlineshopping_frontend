@@ -1,0 +1,43 @@
+<h3 style="color: #0fb9b4; text-align: center;">Create Product</h3>
+<div class="d-flex p-5 m-4 justify-content-center">
+    <br>
+    <div [hidden]="submitted" style="width: 400px;" >
+        <form (ngSubmit)="onSubmit()" ngNativeValidate>
+            <div class="form-group">
+                <label for="name">Product Name</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="product.name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Brand</label>
+                <input type="text" class="form-control" id="brand" required [(ngModel)]="product.brand" name="brand">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Category</label>
+                <input type="text" class="form-control" id="brand" required [(ngModel)]="product.category" name="category">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Made In</label>
+                <input type="text" class="form-control" id="madein" required [(ngModel)]="product.madein" name="madein">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Price</label>
+                <input type="text" class="form-control" id="price" required [(ngModel)]="product.price" name="price">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Image Path </label>
+                <input type="text" class="form-control" id="brand" required [(ngModel)]="product.imgpath" name="imgpath">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </div>
+
+    <div [hidden]="!submitted">
+        <h4>You submitted successfully!</h4>
+    </div>
+</div>
